@@ -147,20 +147,24 @@ table {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
-    height: 100px;
     z-index: 10;
 }
-
+.header.fixed {
+    position: fixed;
+    background-color: #2a2e48;
+    height: auto;
+}
+.header.fixed .header__inner {
+    padding: 20px 0;
+    border-bottom: none;
+}
 .header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    padding: 35px 0;
     border-bottom: 1px solid rgba(250, 250, 250, 0.2);
-    position: sticky;
-    top: 0;
 }
 
 .nav__list {
@@ -180,8 +184,22 @@ table {
 }
 
 .nav__link:hover {
-    text-decoration: underline;
     opacity: 1;
+}
+.burger-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.burger-btn span {
+    display: block;
+    height: 3px;
+    width: 40px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 3px;
 }
 
 .intro {
@@ -246,12 +264,14 @@ table {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
-    padding: 75px 0;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
 .feature_info {
-    margin: 40px;
-    width: 25%;
+    margin: 25px 0;
+    padding: 0 40px;
+    width: 33.33%;
     text-align: center;
 }
 
@@ -290,6 +310,7 @@ table {
 }
 
 .work__photo {
+    min-width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -334,10 +355,11 @@ table {
 }
 
 .team__inner {
-    padding: 100px 0 70px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+    margin-top: 100px;
+    margin-bottom: 70px;
 }
 
 .team__item {
@@ -421,6 +443,9 @@ table {
     overflow: hidden;
     background-color: #53354a;
 }
+.reviews__slider {
+    position: relative;
+}
 .reviews__slider-item {
     display: flex;
     flex-wrap: wrap;
@@ -460,6 +485,28 @@ table {
     font-weight: 700;
     text-transform: uppercase;
 }
+.slick-dots {
+    display: flex;
+    position: absolute;
+    top: 75%;
+    left: 70%;
+}
+.slick-dots li {
+    margin: 0 4px;
+}
+.slick-dots button {
+    width: 12px;
+    height: 12px;
+    background-color: #755d6e;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+}
+.slick-active button {
+    background-color: #fff;
+}
 
 .download__inner {
     padding: 100px 0;
@@ -467,7 +514,6 @@ table {
 }
 .download__title {
     font-size: 28px;
-    line-height: 0.75;
     color: #2d3033;
     font-weight: 300;
     margin-bottom: 20px;
@@ -510,12 +556,16 @@ table {
 .footer__item-text {
     font-size: 14px;
     line-height: 1.6;
-    color: #808080;
+    color: rgba(255, 255, 255, .5);
 }
 .footer__social .social__link {
     margin: 0 3px;
     background-color: transparent;
     border: 2px solid #fff;
+    transition: all .3s;
+}
+.footer__social .social__icon {
+    fill: #fff;
     transition: all .3s;
 }
 .footer__social .social__link:hover {
